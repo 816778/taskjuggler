@@ -142,7 +142,7 @@ task WMGame "Web & Mobile Game" {
         summary "Va a tardar más aún"
       }
     }
-    task tbackDev "Test Despliegue" {
+    task tTestbackCloud "Test Despliegue" {
       effort 10d
       allocate dev1, dev2
       depends WMGame.tcloudback.tbackConfigCloud
