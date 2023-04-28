@@ -108,7 +108,7 @@ task WMGame "Web & Mobile Game" {
     task tlogic "Game logic" {
       effort 12d
       actual:effort 11d
-      allocate dev1, dev2
+      allocate dev1, dev2, dev4
       depends WMGame.tback.tBEd
       journalentry 2023-03-28 "Game logic completed before deadline" {
         author boss
@@ -118,7 +118,7 @@ task WMGame "Web & Mobile Game" {
     }
     task tbackDev "Back development" {
       effort 20d
-      allocate dev1, dev2
+      allocate dev1, dev2, dev4
       depends WMGame.tback.tlogic
     }
   }
@@ -154,7 +154,7 @@ task WMGame "Web & Mobile Game" {
     task tGUId "Web GUI Design" {
       effort 9d
       actual:effort 15d
-      allocate dev3
+      allocate dev3, dev4
       journalentry 2023-04-11 "Problems with the GUI design tool" {
         author dev3
         alert yellow
@@ -163,12 +163,12 @@ task WMGame "Web & Mobile Game" {
     }
     task tFEc "Web Front End Construction" {
       effort 15d
-      allocate dev2, dev3
+      allocate dev2, dev3, dev4
       depends WMGame.twebF.tGUId
     }
     task tFEt "Web Front End Test" {
       effort 6d
-      allocate dev1
+      allocate dev1, dev4
       depends WMGame.twebF.tFEc
     }    
   }
