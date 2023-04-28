@@ -380,6 +380,11 @@ taskreport status "" {
     headline "Future tasks"
     hidetask ~(actual.start > ${now})
   }
+
+  taskreport inicial "" {
+    headline "Plan inicial"
+    hidetask ~(actual.start < ${now})
+  }
 }
 
 # A list of tasks showing the resources assigned to each task.
