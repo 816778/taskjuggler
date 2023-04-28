@@ -383,7 +383,7 @@ taskreport status "" {
 
   taskreport inicial "" {
     headline "Plan inicial"
-    hidetask ~(actual.start < ${now})
+    hidetask ~(actual.start >= ${now})
   }
 }
 
