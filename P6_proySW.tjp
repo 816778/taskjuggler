@@ -189,6 +189,11 @@ task WMGame "Web & Mobile Game" {
       effort 15d
       allocate dev2, dev3
       depends WMGame.tmobileF.tGUIdMob
+      journalentry 2023-04-28 "Problemas con el fronted movil" {
+        author boss
+        alert red
+        summary "Ha caído el sistema. Gracias a todos"
+      }
     }
     task tFEtMob "Mobile Front End Test" {
       effort 6d
@@ -206,11 +211,6 @@ task WMGame "Web & Mobile Game" {
         author boss
         alert red
         summary "The whole team asiigned to this task has a trip to visit a new client from May 7th to May 12th. Needed to check if the project can be finished on time or it is necessary to reasign efforts."
-      }
-      journalentry 2023-04-28 "Problems with the planned dates" {
-        author boss
-        alert red
-        summary "Ha caído el sistema. Gracias a todos"
       }
       depends WMGame.twebF
       depends WMGame.tback
