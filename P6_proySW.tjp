@@ -124,21 +124,21 @@ task WMGame "Web & Mobile Game" {
     # It is necessary to “purge” the “chargeset” because it has been assigned previously to other variable 
     purge chargeset
     chargeset back
-    responsible dev1
+    responsible boss
     depends WMGame.tgdesign
     task tChooseBEd "Choose Cloud" {
       # The effort to finish this task is 5 man-days.
       effort 5d
-      allocate dev1
+      allocate boss
     }
     task tbackConfigCloud "Configuracion y automatizar despliegue" {
       effort 6d
-      allocate dev1, dev2
+      allocate boss
       depends WMGame.tback.tbackDev
     }
     task tTestbackCloud "Test Despliegue" {
       effort 10d
-      allocate dev1, dev2
+      allocate boss
       depends WMGame.tcloudback.tbackConfigCloud
     }
   }
