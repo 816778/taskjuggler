@@ -120,6 +120,35 @@ task WMGame "Web & Mobile Game" {
     }
   }
 
+  task tcloudback "Despliegue Back End" {
+    # It is necessary to “purge” the “chargeset” because it has been assigned previously to other variable 
+    purge chargeset
+    chargeset back
+    responsible dev1
+    depends WMGame.tgdesign
+    task tChooseBEd "Choose Cloud" {
+      # The effort to finish this task is 5 man-days.
+      effort 5d
+      allocate dev1
+    }
+    task tbackConfigCloud "Configuracion y automatizar despliegue" {
+      effort 6d
+      actual:effort 5d
+      allocate dev1, dev2
+      depends WMGame.tback.tbackDev
+      journalentry 2023-03-28 "No se puede hacer sin antes tener el backend correcto" {
+        author boss
+        alert yellow
+        summary "Va a tardar más aún"
+      }
+    }
+    task tbackDev "Test Despliegue" {
+      effort 10d
+      allocate dev1, dev2
+      depends WMGame.tcloudback.tbackConfigCloud
+    }
+  }
+
   task twebF "Web Front End" {
     purge chargeset
     chargeset wFront
