@@ -5,7 +5,7 @@
  * some elements of it
  */
 
-project pSix "Web Game"  2023-04-28 +2.5m {
+project pSix "Web Game"  2023-03-15 +2.5m {
   # Set the default time zone for the project. If not specified, UTC
   # is used.
   timezone "Europe/Paris"
@@ -111,11 +111,6 @@ task WMGame "Web & Mobile Game" {
         author boss
         alert green
         summary "The team has ended the game logic before deadline."
-      }
-      journalentry 2023-04-28 "Game logic completed before deadline" {
-        author boss
-        alert red
-        summary "Falsa alegría. Ha caído se han detectado fallos"
       }
     }
     task tbackDev "Back development" {
